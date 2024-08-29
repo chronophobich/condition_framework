@@ -1,13 +1,16 @@
 # Default values
 default_values = {
-    'a': 1,
-    'g': 0,
-    'v': 0,
-    'oo': 5000,
-    'ff': 4000,
-    'hh': 3000,
-    'oc': 2000,
-    'fc': 1500,
-    'hc': 1500,
-    'vd': 4000
+    'vm': 1,
+    'it': 1,
+    'vcp': 0,
+    'sivt': 0,
+    'givt': 0,
+    'fco': 2000,
+    'MRC_Viewed': True,
+    'VIDEO_STARTED': True,
+    'VIDEO_MRC_VIEWED': True,
+    'q1': 0,
+    'q2': 0,
+    'q3': 0,
+    'q4': 0
 }

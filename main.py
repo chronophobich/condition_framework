@@ -14,5 +14,23 @@ data = [generate_row(condition, default_values) for condition in sorted_conditio
 # Create the DataFrame
 df = pd.DataFrame(data)
 
-print(df)
+df = pd.DataFrame(data)
 
+df['aid'] = '111111111111111'
+df['cid'] = '222222222222'
+df['asid'] = '3333333333333'
+
+custom_index = []
+for i, row in df.iterrows():
+    base_index = f'QAimpression{str(i+1).zfill(3)}'
+    if row['it'] == 1:
+        custom_index.append(f'{base_index}display')
+    elif row['it'] == 2:
+        custom_index.append(f'{base_index}video')
+    else:
+        custom_index.append(base_index)
+
+df.index = custom_index
+
+excel_path = 'conditions_output.xlsx'  
+df.to_excel(excel_path, index=True)
