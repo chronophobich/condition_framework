@@ -6,6 +6,7 @@ from core.generator import generate_row
 from core.sorter import sort_sub_conditions
 
 # Parse and sort the conditions
+
 sorted_conditions_list = [sort_sub_conditions(condition, default_values) for condition in conditions_list]
 
 # Generate the data
@@ -14,11 +15,11 @@ data = [generate_row(condition, default_values) for condition in sorted_conditio
 # Create the DataFrame
 df = pd.DataFrame(data)
 
-df = pd.DataFrame(data)
-
 df['aid'] = '111111111111111'
 df['cid'] = '222222222222'
 df['asid'] = '3333333333333'
+df['VIDEO_STARTED'] = df['VIDEO_STARTED'].astype(bool)
+df['VIDEO_MRC_VIEWED'] = df['VIDEO_MRC_VIEWED'].astype(bool)
 
 custom_index = []
 for i, row in df.iterrows():
@@ -32,5 +33,7 @@ for i, row in df.iterrows():
 
 df.index = custom_index
 
+
 excel_path = 'conditions_output.xlsx'  
 df.to_excel(excel_path, index=True)
+print(df)

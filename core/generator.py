@@ -42,7 +42,6 @@ def generate_row(condition, default_values):
     for cond in condition.split(" and "):
         cond = cond.strip()
         cond = re.sub(r'\s+', ' ', cond).strip()
-        print(cond)
 
         if ">=" in cond:
             lhs, rhs = cond.split(">=")
